@@ -5,14 +5,12 @@ class Solution:
         
         if len(words) == 1:
             return True
-
-        str_list = []
+        
+        str_counter = Counter()
         for word in words:
-            for string in word:
-                str_list.append(string)
-
-        word_counter = Counter(str_list)
-        for frequency in word_counter.values():
+            str_counter += Counter(word)
+    
+        for frequency in str_counter.values():
             if frequency%len(words) != 0:
                 return False
         return True
