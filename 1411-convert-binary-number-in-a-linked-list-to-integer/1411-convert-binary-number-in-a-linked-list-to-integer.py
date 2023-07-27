@@ -11,8 +11,6 @@ class Solution:
         while cur:
             binary_num += str(cur.val)
             cur = cur.next
-        
-        length = len(binary_num)
 
         answer = 0
         for i, string in enumerate(binary_num[::-1]):
