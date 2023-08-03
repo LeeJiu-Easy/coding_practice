@@ -8,19 +8,19 @@ class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         from collections import deque
 
-        q = deque([(root, 0)])
+        q = deque([root])
         total = 0
 
         while q:
-            cur, parent = q.popleft()
+            cur = q.popleft()
     
             if cur.left:
                 if not cur.left.left and not cur.left.right:
                     total += cur.left.val
                 
-                q.append((cur.left, cur))
+                q.append(cur.left)
             
             if cur.right:
-                q.append((cur.right, cur))
+                q.append(cur.right)
             
         return total
