@@ -3,9 +3,9 @@ class Solution:
 
         answer = 0
         while len(nums) >= 2:
-            answer += int(str(nums[0])+str(nums[-1]))
-            del nums[0]
-            del nums[-1]
+            answer += int(f"{nums[0]}{nums[-1]}")
+            nums.pop(0)
+            nums.pop(-1)
         
         if nums:
             answer += nums[0]
