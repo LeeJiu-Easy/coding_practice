@@ -6,6 +6,6 @@ class Solution:
         for i in range(len(nums)):
             for j in range(1, nums[i]+1):
                 next_idx = i+j
-                if next_idx < len(nums):  # 인덱스가 범위를 벗어나지 않도록 체크
+                if next_idx < len(nums):
                     dp[next_idx] = min(dp[next_idx], dp[i] + 1)
         return dp[-1]
